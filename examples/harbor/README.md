@@ -70,6 +70,15 @@ Use the following package requirements for the two-environment model. Pin the
 host and task packages to the same NeMo Fabric release. These examples use
 version `0.6.0`.
 
+The `main` branch documents the next release, which can be ahead of PyPI. Until
+it is published, pin the host and the task to the same prerelease of it, either
+a beta such as `0.6.0b1` or a nightly build of `main`, published as
+`0.6.0a<YYYYMMDD>`. Use exact pins, which pip and uv accept without `--pre`; a
+range such as `>=0.6.0a0` prefers a beta over any newer nightly. When the host
+runs from a source checkout, check out the matching tag, such as
+`v0.6.0-beta.1` or `v0.6.0-alpha.<YYYYMMDD>`. To test unreleased changes, run
+`just wheels` and install the same `dist/` wheels in both environments.
+
 | Environment | Required Dependencies | Purpose |
 | --- | --- | --- |
 | Harbor host | `nemo-fabric[harbor]==0.6.0` | Harbor CLI, `FabricAgent`, and typed `FabricConfig` construction |

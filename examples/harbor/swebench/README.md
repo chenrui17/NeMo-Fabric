@@ -36,6 +36,11 @@ curl -fsSL https://raw.githubusercontent.com/NVIDIA/NeMo-Relay/main/install.sh |
     --install-dir "$FABRIC_BUNDLE/.relay/bin"
 ```
 
+These commands run the Harbor host from this checkout. If the release in
+`FABRIC_PACKAGE` is not yet on PyPI, follow
+[Install the Host and Task Environments](../README.md#install-the-host-and-task-environments):
+check out a prerelease tag and pin `FABRIC_PACKAGE` to the same prerelease.
+
 The `hermes-agent` extra in `FABRIC_PACKAGE` installs only the NeMo Fabric
 Hermes adapter; it does not install Hermes Agent. Hermes Agent 0.20 and later is
 no longer installable from PyPI. Before running the Hermes examples, prepare the
